@@ -1,0 +1,58 @@
+default_language_version:
+    python: python3.12
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: check-yaml
+        description: "Attempts to load all yaml files to verify syntax"
+        args: ['--unsafe']
+    -   id: end-of-file-fixer
+        description: "Makes sure files end in a newline and only a newline"
+    -   id: trailing-whitespace
+        description: "Trims trailing whitespace"
+        language_version: python3
+    -   id: check-added-large-files
+        description: "Prevent giant files from being committed"
+        args: ['--maxkb=8000']
+    -   id: pretty-format-json
+        description: "Checks that all your JSON files are are sorted and indented"
+        args: ['--autofix', '--indent=2']
+    -   id: no-commit-to-branch
+        description: "Protect specific branches from direct checkins."
+        args: [--branch, main, --pattern, release/.*]
+    -   id: debug-statements
+        description: "Check for debugger imports and breakpoint() calls in python source"
+    -   id: double-quote-string-fixer
+    -   id: name-tests-test
+        description: "Verifies that test files are named correctly"
+        args: ['--pytest-test-first']
+        exclude: tests/conftests.py
+    -   id: requirements-txt-fixer
+-   repo: https://github.com/asottile/setup-cfg-fmt
+    rev: v2.5.0
+    hooks:
+    -   id: setup-cfg-fmt
+-   repo: https://github.com/asottile/reorder-python-imports
+    rev: v3.12.0
+    hooks:
+    -   id: reorder-python-imports
+        args: [--py38-plus, --add-import, 'from __future__ import annotations']
+-   repo: https://github.com/asottile/add-trailing-comma
+    rev: v3.1.0
+    hooks:
+    -   id: add-trailing-comma
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.0
+    hooks:
+    -   id: pyupgrade
+        args: [--py38-plus]
+-   repo: https://github.com/hhatto/autopep8
+    rev: v2.0.4
+    hooks:
+    -   id: autopep8
+-   repo: https://github.com/PyCQA/flake8
+    rev: 6.1.0
+    hooks:
+    -   id: flake8
