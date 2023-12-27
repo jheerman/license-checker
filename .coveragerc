@@ -1,0 +1,16 @@
+[run]
+source = license_checker
+relative_files = True
+omit =
+    */tests/*
+    */.tox/*
+    */__init__.py
+    */__main__.py
+    */settings.py
+data_file = coverage-reports/.coverage
+[report]
+show_missing = True
+omit =
+    */.tox/*
+    */tests/*
+    */__init__.py

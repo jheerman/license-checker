@@ -1,0 +1,6 @@
+black
+covdefaults
+coverage
+pre-commit
+pytest
+tox
