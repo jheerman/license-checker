@@ -1,0 +1,7 @@
+black
+covdefaults
+coverage
+loguru
+pre-commit
+pytest
+tox
