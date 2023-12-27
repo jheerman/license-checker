@@ -1,2 +1,2 @@
 from __future__ import annotations
-__license__ = '0.5.0'
+__license__ = 'c2827801af964ae4b529c974ac074027'
