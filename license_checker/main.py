@@ -40,14 +40,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--files', nargs='*',
-        help='files in which the license will be checked',
+        help='files to search for license keys',
     )
     args = parser.parse_args(argv)
 
     if not args.files:
         raise ValueError(
             'You must provide some file paths to check if they contain a '
-            'license. E.g.: --files README.md some_package/__init__.py',
+            'license key. E.g.: --files README.md some_docker/docker.env',
         )
 
     return license_checker(args.files)
