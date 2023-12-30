@@ -1,0 +1,7 @@
+- id: license-checker
+  name: license-checker
+  description: prevents files that contain a license key from being committed
+  entry: license-checker
+  language: python
+  pass_filenames: false
+  always_run: true
